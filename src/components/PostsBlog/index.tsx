@@ -1,57 +1,32 @@
-import { Card, Posts, Title } from "./styles";
+import { CardStyle, Title } from "./styles";
 
-export function PostsBlog() {
-  return (
-    <Posts>
-      <Card>
-        <Title>
-        <h1>JavaScript data types and data structures</h1>
-      <span>Há 1 dia</span>
-     
-        </Title>
-      <p>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in...
-      </p>
-      </Card>
-      <Card>
-        <Title>
-        <h1>JavaScript data types and data structures</h1>
-      <span>Há 1 dia</span>
-     
-        </Title>
-      <p>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in...
-      </p>
-      </Card>
-
-      <Card>
-        <Title>
-        <h1>JavaScript data types and data structures</h1>
-      <span>Há 1 dia</span>
-     
-        </Title>
-      <p>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in...
-      </p>
-      </Card>
-      <Card>
-        <Title>
-        <h1>JavaScript data types and data structures</h1>
-      <span>Há 1 dia</span>
-     
-        </Title>
-      <p>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in...
-      </p>
-      </Card>
-    </Posts>
-  );
+export interface CardsProps {
+  title: string;
+  date: string;
+  body: string | null | undefined;
+  maxBodyLength?: number; 
 }
+
+const Cards = ({ title, date, body, maxBodyLength = 400 }: CardsProps) => {
+  const limitarString = (texto: string | null | undefined, limite: number) => {
+    if (texto && texto.length > limite) {
+      return texto.substring(0, limite) + '...';
+    }
+    return texto || ''; // Fornecer um valor padrão vazio se texto for null ou undefined
+  };
+
+
+  const bodyLimitado = limitarString(body, maxBodyLength);
+
+  return (
+    <CardStyle>
+      <Title>
+        <h1>{title}</h1>
+        <span>{date}</span>
+      </Title>
+      <p>{bodyLimitado}</p>
+    </CardStyle>
+  );
+};
+
+export default Cards;

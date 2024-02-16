@@ -10,7 +10,7 @@ export const Posts = styled.div`
     margin-bottom: 234px; 
   `
 
-export const Card = styled.div`
+export const CardStyle = styled.div`
       padding: 32px;
       background-color:${props => props.theme['base-post']};
       border-radius: 10px;
