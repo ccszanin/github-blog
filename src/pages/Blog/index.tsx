@@ -1,6 +1,7 @@
 import { Header } from "../../components/Header";
 import { Modal } from "../../components/Modal";
-import { Search } from "../../components/Search.tsx";
+import { PostsBlog } from "../../components/PostsBlog/index.tsx";
+import { Search } from "../../components/Search/index.tsx";
 import { BlogContainer } from "./styles.ts";
 
 
@@ -12,6 +13,7 @@ export function Blog() {
       <BlogContainer>
       <Modal/>
       <Search/>
+      <PostsBlog/>
       </BlogContainer>
     </div>
   )

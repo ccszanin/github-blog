@@ -5,7 +5,6 @@ interface HeaderContentProps {
 }
 
 export const HeaderContent = styled.div<HeaderContentProps>`
- width: 100vw;
   height: 296px;
   display: flex;
   align-items: center;

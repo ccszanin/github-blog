@@ -1,4 +1,4 @@
-import { ModalContainer, FlexContainer, Container, Description, HeaderContent } from "./styles";
+import { ModalContainer, FlexContainer, Container, Description, HeaderContent, Items } from "./styles";
 import perfil from "../../assets/perfil.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
@@ -30,7 +30,7 @@ export function Modal() {
        </Description>
       
         <FlexContainer>
-          <FlexContainer>
+          <Items>
             <FontAwesomeIcon
               width={18}
               height={18}
@@ -38,8 +38,8 @@ export function Modal() {
               icon={faGithub}
             />
             <p>@carlacristine_</p>
-          </FlexContainer>
-          <FlexContainer>
+          </Items>
+          <Items>
             <FontAwesomeIcon
               width={18}
               height={18}
@@ -47,7 +47,7 @@ export function Modal() {
               icon={faUserGroup}
             />
             <p>32 seguidores</p>
-          </FlexContainer>
+          </Items>
         </FlexContainer>
         </Container>
     </ModalContainer>

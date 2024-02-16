@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.section`
-     width: 100%;
-     max-width: 864px;
-     margin: 0 auto;
-     padding: 0 1.5rem;
-     display: flex;
-      margin-top: -5rem;
-      background:  ${props => props.theme['base-profile']};
+    width: 100%;
+    max-width: 864px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    margin-top: -5rem;
+    background:  ${props => props.theme['base-profile']};
     border-radius: 6px;
     padding: 2rem;
     box-shadow: 0px 2px 28px 0px #00000033;
@@ -51,10 +51,16 @@ export const ModalContainer = styled.section`
 
   export const FlexContainer = styled.div`
     display: flex;
-    gap: 12px;
     align-items: center;
-   
+    gap:24px ;
   `
+  
+  export const Items = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  `
+
    export const HeaderContent = styled.div`
     display: flex;
     gap:12px;
