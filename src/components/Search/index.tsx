@@ -2,6 +2,7 @@ import { SearchContainer} from "./styles";
 import { Text } from "./styles";
 
 
+
 export function Search() {
   return (
    <>

@@ -1,18 +1,21 @@
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './themes/default'
 import { GlobalStyle } from "./styles/global"
-import { Blog } from './pages/Blog'
+import AppRoutes from './Routes';
+
+
+
 
 function App() {
 
   return (
     <>
        <ThemeProvider theme={defaultTheme}>
+       <AppRoutes/>
       <GlobalStyle/>
-      <Blog/>
       </ThemeProvider>
     </>
   )
 }
 
-export default App
+export default App;

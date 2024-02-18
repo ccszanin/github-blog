@@ -5,7 +5,13 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
 
-export function Modal() {
+export interface CardsProps {
+  login: string;
+  followers: number;
+}
+
+ const MainCard = ({ login, followers }: CardsProps) => {
+  
   return (
     <ModalContainer>
       <img src={perfil} alt="" />
@@ -37,7 +43,7 @@ export function Modal() {
               color="#3A536B"
               icon={faGithub}
             />
-            <p>@carlacristine_</p>
+            <p>{login}</p>
           </Items>
           <Items>
             <FontAwesomeIcon
@@ -46,10 +52,12 @@ export function Modal() {
               color="#3A536B"
               icon={faUserGroup}
             />
-            <p>32 seguidores</p>
+            <p>{followers}</p>
           </Items>
         </FlexContainer>
         </Container>
     </ModalContainer>
   );
 }
+
+export default MainCard;
