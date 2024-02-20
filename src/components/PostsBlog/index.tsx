@@ -7,12 +7,12 @@ export interface CardsProps {
   maxBodyLength?: number; 
 }
 
-const Cards = ({ title, date, body, maxBodyLength = 400 }: CardsProps) => {
+const Cards = ({ title, date, body, maxBodyLength = 250 }: CardsProps) => {
   const limitarString = (texto: string | null | undefined, limite: number) => {
     if (texto && texto.length > limite) {
       return texto.substring(0, limite) + '...';
     }
-    return texto || ''; // Fornecer um valor padrão vazio se texto for null ou undefined
+    return texto || ''; 
   };
 
 

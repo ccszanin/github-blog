@@ -8,6 +8,7 @@ export const Posts = styled.div`
     gap:32px;
     margin-top: 48px;
     margin-bottom: 234px; 
+    text-decoration: none;
   `
 
 export const CardStyle = styled.div`
@@ -15,18 +16,20 @@ export const CardStyle = styled.div`
       background-color:${props => props.theme['base-post']};
       border-radius: 10px;
       border: 1px solid transparent;
-     
+      height:260px ;
+      text-decoration: none !important;
+
+
       &:hover {
       border: 1px solid ${props => props.theme["base-label"]};
     }
-
-
 
       h1{
       font-size: 20px;
       font-weight: 700;
       color: ${props => props.theme['base-title']};
       margin-bottom:20px ;
+      text-decoration: none;
     }
 
     p{
@@ -34,6 +37,7 @@ export const CardStyle = styled.div`
       font-weight: 400;
       color: ${props => props.theme['base-text']};
       line-height: 25.6px;
+      text-decoration: none;
     }
 
     span{

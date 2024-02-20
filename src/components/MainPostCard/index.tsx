@@ -5,13 +5,23 @@ import {
   faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ElementsModal, HeaderModal, Social, SocialItems } from "./styles";
+import { Content, ElementsModal, HeaderModal, Social, SocialItems } from "./styles";
 import { Link } from "react-router-dom";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { CardStyles } from "./styles";
 
-export function MainPostCard() {
+export interface PostProps {
+  login: string;
+  comments: number;
+  title: string;
+  body:string;
+  created_at:string;
+}
+
+
+const MainPostCard = ({ login, comments, title, body, created_at }: PostProps) => {
   return (
+    <>
     <CardStyles>
       <HeaderModal>
         <ElementsModal>
@@ -35,7 +45,7 @@ export function MainPostCard() {
         </ElementsModal>
       </HeaderModal>
       <div>
-        <h1>JavaScript data types and data structures</h1>
+        <h1>{title}</h1>
       </div>
       <Social>
         <SocialItems>
@@ -45,7 +55,7 @@ export function MainPostCard() {
             color="#7B96B2"
             icon={faGithub}
           />
-          <p>ccszanin</p>
+          <p>{login}</p>
         </SocialItems>
         <SocialItems>
           <FontAwesomeIcon
@@ -54,7 +64,7 @@ export function MainPostCard() {
             color="#7B96B2"
             icon={faCalendarDay}
           />
-          <p>há 1 dia</p>
+          <p>{created_at}</p>
         </SocialItems>
         <SocialItems>
           <FontAwesomeIcon
@@ -63,9 +73,17 @@ export function MainPostCard() {
             color="#7B96B2"
             icon={faComment}
           />
-          <p>5 comentários</p>
+          <p>{comments}</p>
         </SocialItems>
       </Social>
     </CardStyles>
+    
+    <Content>
+    <p>
+     {body}
+    </p>
+  </Content>
+ </>
   );
 }
+export default MainPostCard;
