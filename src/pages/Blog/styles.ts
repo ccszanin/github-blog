@@ -7,7 +7,6 @@ export const BlogContainer= styled.main`
  margin: 0 auto ;
 
 `
-
 export const Text = styled.div`
   display: flex;
   justify-content: space-between;

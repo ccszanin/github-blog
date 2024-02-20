@@ -7,9 +7,6 @@ import { Posts } from "../../components/PostsBlog/styles.ts";
 import MainCard from "../../components/MainCard/index.tsx";
 import { Link } from "react-router-dom";
 
-//Pegar o valor do input através da propriedade onChange e criar uma função que recebe esse valor e faz uma requisição m para api passando o parametro de texto (q) 
-
-//salvar o retorno no issues set issues
 
 interface Issue {
   number: number;
@@ -28,7 +25,6 @@ const Blog = () => {
   const [searchText, setSearchText] = useState<string>('');
   const [debouncedSearchText, setDebouncedSearchText] = useState<string>('');
   const [allIssues, setAllIssues] = useState<Issue[] | null>(null);
-  // const [filteredIssues, setFilteredIssues] = useState<Issue[] | null>(null);
   const [user, setUser] = useState<User | null>(null);
 
 

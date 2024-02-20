@@ -48,6 +48,7 @@ export const CardStyles = styled.section`
       line-height: 31.2px;
       color: ${props=> props.theme['base-title']};
     }
+    
     p{
       font-size: 16px;
       font-weight: 400;
