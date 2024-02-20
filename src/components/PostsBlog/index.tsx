@@ -1,4 +1,6 @@
+import Markdown from "react-markdown";
 import { CardStyle, Title } from "./styles";
+
 
 export interface CardsProps {
   title: string;
@@ -7,7 +9,7 @@ export interface CardsProps {
   maxBodyLength?: number; 
 }
 
-const Cards = ({ title, date, body, maxBodyLength = 250 }: CardsProps) => {
+const Cards = ({ title, date, body, maxBodyLength = 150 }: CardsProps) => {
   const limitarString = (texto: string | null | undefined, limite: number) => {
     if (texto && texto.length > limite) {
       return texto.substring(0, limite) + '...';
@@ -24,7 +26,9 @@ const Cards = ({ title, date, body, maxBodyLength = 250 }: CardsProps) => {
         <h1>{title}</h1>
         <span>{date}</span>
       </Title>
-      <p>{bodyLimitado}</p>
+      <Markdown>
+      {bodyLimitado}
+      </Markdown>
     </CardStyle>
   );
 };

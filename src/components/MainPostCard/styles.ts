@@ -48,7 +48,7 @@ export const CardStyles = styled.section`
       line-height: 31.2px;
       color: ${props=> props.theme['base-title']};
     }
-    
+
     p{
       font-size: 16px;
       font-weight: 400;
@@ -73,12 +73,16 @@ padding-top:8px ;
 export const Content = styled.div`
     display: flex;
     padding: 40px;
-  
+    width: 880px !important;
     p{
       font-size: 16px;
       font-weight: 400;
       line-height: 25.6px;
       color: ${props => props.theme['base-text']};
     }  
+
+    h1, h2, h3, li{
+      color: ${props => props.theme['base-text']};
+    }
     ; 
   `

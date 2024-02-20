@@ -11,6 +11,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { CardStyles } from "./styles";
 import { useEffect, useState} from "react";
 import axios from "axios"
+import ReactMarkdown from 'react-markdown'
 
 interface AuthorType {
   login: string;
@@ -112,9 +113,9 @@ const MainPostCard = ({ comments, title, body, created_at }: PostProps) => {
     </CardStyles>
     
     <Content>
-    <p>
+      <ReactMarkdown>
      {body}
-    </p>
+    </ReactMarkdown>
   </Content>
  </>
   );

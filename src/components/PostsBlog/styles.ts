@@ -46,6 +46,9 @@ export const CardStyle = styled.div`
       color: ${props => props.theme['base-span']};
       white-space: nowrap;
     }
+    h1, h2, h3, li{
+      color: ${props => props.theme['base-text']};
+    }
 
 `
 
