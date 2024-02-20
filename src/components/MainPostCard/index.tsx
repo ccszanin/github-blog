@@ -9,21 +9,23 @@ import { Content, ElementsModal, HeaderModal, Social, SocialItems } from "./styl
 import { Link, useParams } from "react-router-dom";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { CardStyles } from "./styles";
-import { useEffect} from "react";
+import { useEffect, useState} from "react";
 import axios from "axios"
 
-export interface PostProps {
+interface AuthorType {
   login: string;
-  comments: number;
-  title: string;
-  body:string;
-  created_at:string;
-  children?: React.ReactNode; 
 }
 
 
+export interface PostProps {
+  comments: number;
+  title: string;
+  body: string;
+  created_at: string;
+}
 export interface Issue {
   login: string;
+  user?: AuthorType;
   comments: number;
   title: string;
   body:string;
@@ -31,14 +33,15 @@ export interface Issue {
 }
 
 
-const MainPostCard = ({ login, comments, title, body, created_at }: PostProps) => {
+const MainPostCard = ({ comments, title, body, created_at }: PostProps) => {
   const { issueNumber } = useParams();
+  const [issueDetail, setIssueDetail] = useState<Issue | null>(null);
 
   useEffect(() => {
     const fetchIssueDetail = async () => {
       try {
-         await axios.get<Issue>(`https://api.github.com/repos/rocketseat-education/reactjs-github-blog-challenge/issues/${issueNumber}`);
-        
+        const response =  await axios.get<Issue>(`https://api.github.com/repos/rocketseat-education/reactjs-github-blog-challenge/issues/${issueNumber}`);
+         setIssueDetail(response.data);
       } catch (error) {
         console.error('Erro ao obter detalhes da issue:', error);
       }
@@ -46,6 +49,7 @@ const MainPostCard = ({ login, comments, title, body, created_at }: PostProps) =
 
     fetchIssueDetail();
   }, [issueNumber]);
+
 
   return (
     <>
@@ -81,7 +85,10 @@ const MainPostCard = ({ login, comments, title, body, created_at }: PostProps) =
             color="#7B96B2"
             icon={faGithub}
           />
-          <p>{login}</p>
+          
+          {issueDetail?.user?.login && (
+              <p>{issueDetail.user.login}</p>
+            )}
         </SocialItems>
         <SocialItems>
           <FontAwesomeIcon

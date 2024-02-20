@@ -38,7 +38,7 @@ const Issues =  () => {
   <Header />
   <BlogContainer>
     {issueDetail && (
-      <MainPostCard login={issueDetail.login} comments={issueDetail.comments} title={issueDetail.title} body={issueDetail.body} created_at={issueDetail.created_at} />
+      <MainPostCard  comments={issueDetail.comments} title={issueDetail.title} body={issueDetail.body}  created_at={issueDetail.created_at} />
     )}
   </BlogContainer>
 </>
