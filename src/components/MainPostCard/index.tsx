@@ -12,6 +12,7 @@ import { CardStyles } from "./styles";
 import { useEffect, useState} from "react";
 import axios from "axios"
 import ReactMarkdown from 'react-markdown'
+import { dateFormatter} from "../../utils/formatter";
 
 interface AuthorType {
   login: string;
@@ -34,7 +35,7 @@ export interface Issue {
 }
 
 
-const MainPostCard = ({ comments, title, body, created_at }: PostProps) => {
+const MainPostCard = ({ comments, title, body }: PostProps) => {
   const { issueNumber } = useParams();
   const [issueDetail, setIssueDetail] = useState<Issue | null>(null);
 
@@ -98,7 +99,10 @@ const MainPostCard = ({ comments, title, body, created_at }: PostProps) => {
             color="#7B96B2"
             icon={faCalendarDay}
           />
-          <p>{created_at}</p>
+            {issueDetail?.created_at && (
+              <p> {dateFormatter.format(new Date(issueDetail.created_at))}</p>
+            )}
+      
         </SocialItems>
         <SocialItems>
           <FontAwesomeIcon

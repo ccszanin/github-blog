@@ -94,7 +94,7 @@ return (
         )}
         <Text>
           <h1>Publicações</h1>
-          <p>6 publicações</p>
+          <p>{allIssues ? `${allIssues.length} publicações` : ''}</p>
         </Text>
         <SearchContainer>
           <input

@@ -27,8 +27,6 @@ export const ElementsModal = styled.div`
   align-items: center;
   color: ${props => props.theme["blue"]};
   text-decoration: none;
-
-
  }
 
 `
@@ -79,9 +77,7 @@ export const Content = styled.div`
     padding: 40px;
     width: 880px !important;
 
-    * {
-  color: ${props => props.theme['base-text']};
-}
+
 
 
     p{
@@ -120,5 +116,9 @@ export const Content = styled.div`
       padding-top: 40px;
       max-width:800px ;
     }
+
+    a {
+  color: ${props => props.theme["blue"]};
+ }
     ; 
   `
