@@ -70,8 +70,8 @@ useEffect(() => {
       console.log('Iniciando busca:', searchText);
       if (searchText.trim() !== '') {
         try {
-          const response = await axios.get<Issue[]>(`https://api.github.com/search/issues?q=${searchText}%20repo:rocketseat-education/reactjs-github-blog-challenge`);
-          setAllIssues(response.data);
+          const response = await axios.get<{ items: Issue[] }>(`https://api.github.com/search/issues?q=${searchText}%20repo:rocketseat-education/reactjs-github-blog-challenge`);
+          setAllIssues(response.data.items);
           console.log(searchText);
         } catch (error) {
           console.log('Erro na busca:', error);
@@ -84,7 +84,6 @@ useEffect(() => {
 
   fetchSearchResults(debouncedSearchText);
 }, [debouncedSearchText]);
-
 
 return (
   <div>

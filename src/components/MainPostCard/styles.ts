@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+
+
+
 export const HeaderModal = styled.section`
   display: flex;
   justify-content: space-between;
@@ -72,8 +75,15 @@ padding-top:8px ;
 
 export const Content = styled.div`
     display: flex;
+    flex-direction: column;
     padding: 40px;
     width: 880px !important;
+
+    * {
+  color: ${props => props.theme['base-text']};
+}
+
+
     p{
       font-size: 16px;
       font-weight: 400;
@@ -81,8 +91,34 @@ export const Content = styled.div`
       color: ${props => props.theme['base-text']};
     }  
 
-    h1, h2, h3, li{
+    h1, h2, h3, li, code{
       color: ${props => props.theme['base-text']};
+    }
+
+    h2{
+      padding-top: 40px;
+      padding-bottom: 10px;
+    }
+
+    h3{
+      padding-top: 30px;
+      padding-bottom: 10px;
+    }
+    code{
+    gap:8px;
+    }
+
+    pre{
+    margin-top: 40px;
+    background-color: ${props => props.theme['base-post']}; 
+    border-radius: 2px;
+    padding:16px;
+    }
+   
+
+    img{
+      padding-top: 40px;
+      max-width:800px ;
     }
     ; 
   `
