@@ -37,7 +37,7 @@ ___
 Clone o projeto para o local desejado em seu computador.
 
 ```bash
-$ git clone git@github.com:andreviapiana/GitHub-Blog.git
+$ git clone git@github.com:ccszanin/githubBlog.git
 ```
 ___
 
@@ -45,7 +45,7 @@ ___
 ```bash
 
 # Navegue até o diretório
-$ cd GitHub-Blog
+$ cd githubBlog
 
 # Instale as dependências necessárias
 $ npm install
